@@ -35,7 +35,7 @@ export class ShopingEditComponent implements OnInit, OnDestroy {
       );
   }
 
-  onAddItem(form: NgForm){
+  onSubmit(form: NgForm){
     const value = form.value;
     const newIngredient = new Ingredient(value.name, value.amount);
     if(this.editMode) {
