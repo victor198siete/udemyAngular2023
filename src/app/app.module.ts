@@ -20,7 +20,9 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeService } from './recipes/recipe.service';
 
 import { DropdownDirective } from './shared/dropdown.directive';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './auth/auth.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 @NgModule({
     declarations: [
@@ -34,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
         ShopingEditComponent,
         DropdownDirective,
         RecipeStartComponent,
-        RecipeEditComponent
+        RecipeEditComponent,
+        AuthComponent
     ],
     imports: [
         BrowserModule,
@@ -46,6 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
     providers: [
       ShopingListService,
       RecipeService,
+      {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
     ],
     exports: [
         RecipeItemComponent
