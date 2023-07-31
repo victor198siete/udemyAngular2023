@@ -1,8 +1,12 @@
+<ng-template appPlaceHolder></ng-template>
+
 <div class="row">
   <div class="col-xs-12 col-md-6 col-offset-3">
-    <div class="alert alert-danger" *ngIf="error">
+    <!-- <div class="alert alert-danger" *ngIf="error">
       <p>{{ error }}</p>
-    </div>
+    </div> -->
+    <!-- <app-alert *ngIf="error" [message]="error" (close)="handleError()"></app-alert> -->
+    <div #addHere></div>
     <div class="text-center" *ngIf="isLoading">
       <img src="./../../assets/images/Settings.gif">
     </div>

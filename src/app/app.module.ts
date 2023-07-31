@@ -23,6 +23,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './auth/auth.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { AlertComponent } from './shared/alert/alert.component';
+import { PlaceHolderDirective } from './shared/placeholder.directive';
 
 @NgModule({
     declarations: [
@@ -37,7 +39,9 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
         DropdownDirective,
         RecipeStartComponent,
         RecipeEditComponent,
-        AuthComponent
+        AuthComponent,
+        AlertComponent,
+        PlaceHolderDirective
     ],
     imports: [
         BrowserModule,
@@ -54,6 +58,6 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     exports: [
         RecipeItemComponent
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule { }
